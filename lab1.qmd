@@ -8,6 +8,12 @@ embed-resources: true
 execute:
   echo: true
   error: true 
+toc: true 
+toc-depth: 2
+toc-title: Contents
+toc-location: body
+code-fold: true
+theme: cerulean
 ---
 
 # Part Two: Exploring Quarto Documents
