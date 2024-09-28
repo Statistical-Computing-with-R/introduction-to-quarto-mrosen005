@@ -97,3 +97,9 @@ should be **center aligned**.
 **Question 9** -- Specify a **figure caption** for the boxplots (using a
 code-chunk option).
 
+```{r}
+data("ToothGrowth")
+ttest_supp_len <- t.test(len ~ supp, data = ToothGrowth, var.equal = FALSE, alternative = "two.sided")
+print(ttest_supp_len)
+```
+
