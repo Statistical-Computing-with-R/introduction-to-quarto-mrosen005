@@ -3136,7 +3136,7 @@ vertical-align: -.125em;
 <section id="check-the-data-documentation" class="level3">
 <h3 class="anchored" data-anchor-id="check-the-data-documentation">Check the Data Documentation</h3>
 <p><strong>Question 4</strong> – In your <strong>console</strong> (<em>not</em> in the Quarto document), type <code>?ToothGrowth</code> (or alternatively <code>help(ToothGrowth)</code>.Use the information that pops up in the <em>Help</em> pane in RStudio to fill in the blanks below.</p>
-<p><em>This dataset investigates the effect of the length of odontoblasts on tooth growth in guinea pigs.</em></p>
+<p><em>This dataset investigates the effect of supplements on tooth growth in guinea pigs.</em></p>
 <p><em>The two supplement delivery methods include OJ (orange juice) and VC (ascorbic acid).</em></p>
 <p><em><code>ToothGrowth</code> is a data frame with 60 observations and 3 variables.</em></p>
 <p><strong>Question 5</strong> – <em>Before</em> the code chunk, change the “Running the Provided Code” section header to a header that better describes the contents of this section (e.g., Tooth Growth Dataset).</p>
@@ -3191,6 +3191,9 @@ vertical-align: -.125em;
 <p><strong>Question 7</strong> – Read over the <a href="https://quarto.org/docs/authoring/figures.html#computations">Quarto documentation on figure options</a> and add an option (<code>#|</code>) to the above code chunk to make the figures print side-by-side (i.e., in one row) in the rendered HTML file.</p>
 <p><strong>Question 8</strong> – Specify in the code chunk options that these boxplots should be <strong>center aligned</strong>.</p>
 <p><strong>Question 9</strong> – Specify a <strong>figure caption</strong> for the boxplots (using a code-chunk option).</p>
+</section>
+<section id="t-test-comparing-tooth-length-between-the-two-supplement-methods" class="level2">
+<h2 class="anchored" data-anchor-id="t-test-comparing-tooth-length-between-the-two-supplement-methods">T-test Comparing Tooth Length Between the Two Supplement Methods</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;ToothGrowth&quot;</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ttest_supp_len <span class="ot">&lt;-</span> <span class="fu">t.test</span>(len <span class="sc">~</span> supp, <span class="at">data =</span> ToothGrowth, <span class="at">var.equal =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span>
@@ -3209,6 +3212,10 @@ mean in group OJ mean in group VC
         20.66333         16.96333 </code></pre>
 </div>
 </div>
+<ol type="1">
+<li>With a p-value of 0.06063, at a significance level of 0.05, we fail to reject the null hypothesis. There is not sufficient evidence of a difference in mean tooth lengths in guinea pigs between guinea pigs who received supplements via orange juice and mean tooth lengths in guinea pigs who received supplements via ascorbic acid.</li>
+<li>The 95% confidence interval for the difference in means between guinea pigs who received supplements via orange juice and mean tooth lengths in guinea pigs who received supplements via ascorbic acid is -0.1710156 and 7.5710156. This means that we are 95% confident that the true difference in mean tooth lengths between guinea pigs who received supplements via orange juice and mean tooth lengths in guinea pigs who received supplements via ascorbic acid is between -0.17 mm and 7.57 mm.</li>
+</ol>
 </section>
 </section>
 

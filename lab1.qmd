@@ -47,7 +47,7 @@ chunk and paste in the code provided in the Lab 1 instructions.
 `?ToothGrowth` (or alternatively `help(ToothGrowth)`.Use the information that
 pops up in the *Help* pane in RStudio to fill in the blanks below. 
 
-*This dataset investigates the effect of the length of odontoblasts on tooth growth in guinea pigs.*
+*This dataset investigates the effect of supplements on tooth growth in guinea pigs.*
 
 *The two supplement delivery methods include OJ (orange juice) and VC (ascorbic acid).*
 
@@ -97,9 +97,14 @@ should be **center aligned**.
 **Question 9** -- Specify a **figure caption** for the boxplots (using a
 code-chunk option).
 
+## T-test Comparing Tooth Length Between the Two Supplement Methods
+
 ```{r}
 data("ToothGrowth")
 ttest_supp_len <- t.test(len ~ supp, data = ToothGrowth, var.equal = FALSE, alternative = "two.sided")
 print(ttest_supp_len)
 ```
-
+1) With a p-value of 0.06063, at a significance level of 0.05, we fail to reject the null hypothesis. There is not sufficient evidence of a difference in mean tooth lengths in guinea pigs between guinea pigs who received supplements via orange juice and mean tooth lengths in guinea pigs who received supplements via ascorbic acid. 
+2) The 95% confidence interval for the difference in means between guinea pigs who received supplements via orange juice and mean tooth lengths in guinea pigs who received supplements via ascorbic acid is -0.1710156 and 7.5710156. This means that we are 95% confident that the true difference in mean tooth lengths between guinea pigs who received supplements via orange juice and mean tooth lengths in guinea pigs who received supplements via ascorbic acid is between -0.17 mm and 7.57 mm. 
+  
+  
